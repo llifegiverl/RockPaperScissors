@@ -1,8 +1,13 @@
 #include <iostream>
 using namespace std;
 #include <cstdlib>
-
+void PlayGame();
 int main() {
+    PlayGame();
+
+    return 0;
+}
+void PlayGame() {
     srand(time(NULL));
     char ai;
     char user;
@@ -16,6 +21,7 @@ int main() {
         cout << "Enter Character For What You Want To Play" << endl;
         cout << "R For Rock, S For Scissors, P For Paper " << endl;
         cin >> user;
+        user = toupper(user);
         if (user != 'R' && user != 'S' && user != 'P') {
             cout << "Wrong Entry! Have Fun Losing!" << endl;
             user = autoLose;
@@ -67,6 +73,6 @@ int main() {
             else if (user == 'P')
                 cout << "You Lose!" << endl;
         }
-        cout << i << endl;
+        
     }
 }
